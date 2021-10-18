@@ -18,5 +18,5 @@ start test with: `npm test`
 
 ## Video 
 
-<video src="https://drive.google.com/file/d/1YCTif6jK1XWkk3sI0OnMKGi34hBjXr2t/view?usp=sharing" width=180/>
+<video src="./video/demo.mov" width=180/>
 
