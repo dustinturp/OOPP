@@ -65,6 +65,8 @@ const promptManager = () => {
       console.log("console log from manager section", employeeProfiles);
     });
 };
+//  add in ID for the user to add it in. 
+// separate prompts for each constructor type if X is selected then build that.
 
 const promptNewEmployee = () => {
   console.log("Add Employee");
@@ -101,9 +103,8 @@ const promptNewEmployee = () => {
         name: "position",
         message: "What position does the member have? (Check one)",
         choices: [
-          "Manager",
           "Engineer",
-          "Intern",
+          "Intern"
         ],
       },
       {
@@ -134,7 +135,7 @@ const promptNewEmployee = () => {
             }
           },
       },
-      {
+      { // change to confirm done building team
         type: "confirm",
         name: "confirmAddTeamMember",
         message: "Would you like to add another team member?",
@@ -164,7 +165,6 @@ const promptNewEmployee = () => {
         return promptNewEmployee();
       } else {
         // console.log("Need to build HTML from data!", employeeProfiles);
-        // zip with constructors
         //if === type add to proper constructor
         writeFile(employeeProfiles);
       }
@@ -176,9 +176,10 @@ const promptNewEmployee = () => {
 function init() {
     promptManager()
     .then(promptNewEmployee)
-    .then((data) => {
-        console.log("Hello from init", data);
-      });
+    // .then((data) => {
+    //     console.log("Hello from init", data);
+    //   });
+     
     
 }
 

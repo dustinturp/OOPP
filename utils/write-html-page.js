@@ -33,9 +33,9 @@ const htmlPageTemplate = function (fileContent) {
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     </body>
     </html>
-
     `
 }
+// create templates for each unique constructor type or if you can find a way ot make this work in a few hours.
 
 const htmlCardTemplate = function (fileContent) {
     return`
@@ -58,25 +58,29 @@ const htmlCardTemplate = function (fileContent) {
 
 // custom filler for card depending on if data is for an engineer, intern, or manager
 const htmlCardCustomSection = function (fileContent) {
-    if (fileContent.position === "Manager") {
-        return`Office Number: ${fileContent.officeNum}`
-    }
-    
+    // filter for manger
+    //check if manager is there
+    console.log(fileContent[0])
+    const manager = fileContent.filter(e => e === fileContent[0])
+    //testing if new array is made
+    console.log("line 64", manager);
+    // if (fileContent.position === "Manager") {
+    //     return `Office Number: ${fileContent.officeNum}`
+    // }
 }
-
 
 // writing files
 const writeFile = fileContent => {
     console.log('file content', fileContent);
     let generatedCardsArr = []
 
-    console.log(" file content length", fileContent.length)
-
-    for (i = 0; i < fileContent.length; i++){
-        //every element needs a card built
-        // htmlCardTemplate(i)
-        console.log("object", i)
-    }
+    // console.log(" file content length", fileContent.length)
+    htmlCardCustomSection(fileContent);
+    // for (i = 0; i < fileContent.length; i++){
+    //     //every element needs a card built
+    //     // htmlCardTemplate(i)
+    //     console.log("object", i)
+    // }
     
     
     //use let deconstruct array into template or pull template
@@ -87,7 +91,6 @@ const writeFile = fileContent => {
 //         reject(err);
 //         return;
 //       }
-
 //       resolve({
 //         ok: true,
 //         message: 'File created!'
@@ -96,6 +99,5 @@ const writeFile = fileContent => {
 //   });
 };
 // HTML template fill with generated cards 
-
 
 module.exports = writeFile;
