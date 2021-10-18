@@ -3,5 +3,5 @@
 const Manager = require('../utils/manager_constructor');
 
 test('create employee obj', () => {
-   const employee = new Employee('1234', 'test Name', 'test@gmail.com', 'position') 
+   const manager = new Manager('1234', 'test Name', 'test@gmail.com', 'position') 
 })

@@ -67,29 +67,16 @@ const htmlCardCustomSection = function (fileContent) {
 
 // writing files
 const writeFile = fileContent => {
-    // console.log('content write file', fileContent);
+    console.log('file content', fileContent);
     let generatedCardsArr = []
-    let alteredJSONArr = []
+
     console.log(" file content length", fileContent.length)
-    // alteredJSONArr = JSON.stringify(fileContent)
-    // console.log("items should be in an array and stings", alteredJSONArr)
-    // console.log("length of array", alteredJSONArr.length)
-    // ### testing if for loop stingify items in file contents works.
+
     for (i = 0; i < fileContent.length; i++){
         //every element needs a card built
         // htmlCardTemplate(i)
         console.log("object", i)
-        alteredJSONArr.push(JSON.stringify(i))
     }
-    console.log("items should be in an array and stings", alteredJSONArr)
-    console.log("length of array", alteredJSONArr.length)
-
-
-    // for (i = 0; i < alteredJSONArr.length; i++){
-    //     //every element needs a card built
-    //     // htmlCardTemplate(i)
-    //     console.log("object", i)
-    // }
     
     
     //use let deconstruct array into template or pull template
